@@ -26,14 +26,12 @@ dodeb=unknown
 docker=false
 check=false
 
-if [ ! -d .git ]
-then
+if [[ ! -d .git ]]; then
     echo "Error: can only be run from within the PCP git repository"
     exit 1
 fi
 
-if [ ! -f VERSION.pcp ]
-then
+if [[ ! -f VERSION.pcp ]]; then
     echo "Error: can only be run from within the PCP source tree"
     exit 1
 fi
