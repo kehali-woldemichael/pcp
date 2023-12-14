@@ -728,8 +728,9 @@ in
 
     Darwin)
 	mytype=brew
-	installcmd="brew install"
-	echo >&2 "TODO: no list all packages method for brew"
+	installcmd="brew list"
+	#echo >&2 "TODO: no list all packages method for brew"
+	brew list --formulae | sed -n -e '/^Name /s/.* : //p' >$tmp.installed
 	;;
 
 esac

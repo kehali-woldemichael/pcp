@@ -26,15 +26,6 @@ dodeb=unknown
 docker=false
 check=false
 
-if [[ ! -d .git ]]; then
-    echo "Error: can only be run from within the PCP git repository"
-    exit 1
-fi
-
-if [[ ! -f VERSION.pcp ]]; then
-    echo "Error: can only be run from within the PCP source tree"
-    exit 1
-fi
 
 tmp=`mktemp -d /tmp/pcp.XXXXXXXXX` || exit 1
 trap "rm -rf $tmp" 0 1 2 3 15
